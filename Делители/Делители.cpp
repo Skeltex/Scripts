@@ -1,8 +1,8 @@
 // ѕоиск наименьшего делител€, отличного от 1
 int find_min_divisor(int n) {
-    for (int i = 2; i <= (int)sqrt(n); ++i) {
-        if (n % i == 0) {
-            return i;
+    for (int d = 2; d <= (int)sqrt(n); ++d) {
+        if (n % d == 0) {
+            return d;
         }
     }
     return n;
@@ -10,7 +10,7 @@ int find_min_divisor(int n) {
 
 
 // ѕоиск наибольшего делител€, отличного от n
-int find_min_divisor(int n) {
+int find_max_divisor(int n) {
     return n / find_min_divisor(n);
 }
 
@@ -21,7 +21,7 @@ int count_divisors(int n) {
         return 1;
 
     int count = 2;
-    for (int d = 0; d <= (int)sqrt(n); ++d) {
+    for (int d = 2; d <= (int)sqrt(n); ++d) {
         ++count;
         count += (d != (int)sqrt(n));
     }
